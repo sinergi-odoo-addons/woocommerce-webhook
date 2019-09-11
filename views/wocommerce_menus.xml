@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Webhook" id="webhook" parent="base.menu_custom"/>
+        <menuitem id="menu_woocommerce_instance_submenu" parent="webhook" action="action_woocommerce_instance" name="Woocommerce Instances"/>
+        <menuitem id="menu_wordpress_instance_submenu" parent="webhook" action="action_wordpress_instance" name="Wordpress Instances"/>
+    </data>
+</odoo>

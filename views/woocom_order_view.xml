@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+		 <record id="view_sale_order_form_woocom" model="ir.ui.view">
+            <field name="name">view.sale.order.form.woocom</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                <field name='sale_type' readonly="1"/>
+                </xpath>
+                <xpath expr="//page[2]" position="after">
+                    <page string="Woocommerce Order Information" attrs="{'invisible': [('sale_type','=','Offline')]}">
+                        <form string="Woocommerce Order">
+                            <group col="2">
+                                <field name='woo_order_number'/>
+                                <field name="woo_order_status" />
+                            </group>
+                        </form>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+         
+        <record id="view_sale_order_tree_woocom" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree/field[@name='name']" position="after">
+                    <field name="sale_type" string="Sales Type"/>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</odoo>
