@@ -3,7 +3,7 @@
 {
     "name" : "Odoo 10 Woocommerce Connector",
     "author" : "Sinergi Creative",
-    "version" : "10.0.1.7",
+    "version" : "10.0.1.8",
     "category" : "Sales",
     "depends" : ['base','account','delivery','stock','sale'],
     "description": """
