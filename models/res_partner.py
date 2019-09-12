@@ -99,7 +99,7 @@ class VendorEventListener(Component):
             finally:
                 woocommerce.close()
 
-        elif record.customer is True and record.woo_cust_id is not None and record.company_type == "company":
+        elif record.customer is True and record.woo_customer is True and record.company_type == "company":
                 # Get Woocommerce Credential
                 webhook = self.env["wordpress.instance"].search([("name","=","wordpress")])
                 client_id = webhook.consumer_key
